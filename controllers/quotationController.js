@@ -1,6 +1,33 @@
+const axios = require('axios')
+const api = require('../Api')
 
-
-
-exports.getdolarquotation = (req,res,next) => {
-    return res.status(200).json({message: 'aqui ficara a cotaçao do dolar'})
+exports.dolarQuotation = async (req,res,next) => {
+    try {
+        const { data } = await api.get('USD-BRL')
+        
+        return res.send({data})
+    } catch (error) {
+        res.send({error})
+    }
 }
+
+exports.euroQuotation = async (req,res,next) => {
+    try {
+        const { data } = await api.get('EUR-BRL')
+        
+        return res.send({data})
+    } catch (error) {
+        res.send({error})
+    }
+}
+
+exports.btcQuotation = async (req,res,next) => {
+    try {
+        const { data } = await api.get('BTC-BRL')
+        
+        return res.send({data})
+    } catch (error) {
+        res.send({error})
+    }
+}
+

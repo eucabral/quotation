@@ -9,5 +9,10 @@
   },
   "keywords": [],
   "author": "Cabral <guilhermedeoliveiracabral@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
 }
