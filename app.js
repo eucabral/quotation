@@ -3,6 +3,15 @@ const app = express()
 
 const quotationRoutes = require('./routes/quotationRoute')
 
+app.use((req,res,next) => {
+    res.header('Acess-Control-Allow-Origin', '*')
+    res.header('Acess-Control-Allow-Header,Origin,X-Request-With,Content-Type,Accept,Autorization')
+    if(req.method === 'OPTIONS') {
+        res.header('Acess-Control-Allow-Methods', 'GET')
+    }
+    next()
+})
+
 app.use('/quotation', quotationRoutes)
 
 //quando nao encontra rota
