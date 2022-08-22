@@ -13,6 +13,9 @@ app.use((req,res,next) => {
 })
 
 app.use('/quotation', quotationRoutes)
+app.get('/',(req,res) => {
+    return res.status(200).json({message: 'Sucesso!'})
+})
 
 //quando nao encontra rota
 app.use((req,res,next) => {

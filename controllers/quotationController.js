@@ -1,7 +1,7 @@
 const axios = require('axios')
 const api = require('../Api')
 
-const message = 'Unexpected error'
+const message = 'Ocorreu um erro inesperado!'
 
 exports.dolarQuotation = async (req,res,next) => {
     try {
@@ -15,7 +15,7 @@ exports.dolarQuotation = async (req,res,next) => {
         res.status(200).json(response)
 
     } catch (error) {
-        res.json({message})
+        res.status(500).json({message})
     }
 }
 
@@ -31,7 +31,7 @@ exports.euroQuotation = async (req,res,next) => {
         res.status(200).json(response)
 
     } catch (error) {
-        res.send({message})
+        res.status(500).json({message})
     }
 }
 
@@ -47,7 +47,6 @@ exports.btcQuotation = async (req,res,next) => {
         res.status(200).json(response)
         
     } catch (error) {
-        res.json({message})
+        res.status(500).json({message})
     }
 }
-
