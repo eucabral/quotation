@@ -12,10 +12,10 @@ exports.dolarQuotation = async (req,res,next) => {
             'value': data[0].ask
         }]
 
-        res.send(response)
+        res.status(200).json(response)
 
     } catch (error) {
-        res.send({message})
+        res.json({message})
     }
 }
 
@@ -28,7 +28,7 @@ exports.euroQuotation = async (req,res,next) => {
             'value': data[0].ask
         }]
 
-        res.send(response)
+        res.status(200).json(response)
 
     } catch (error) {
         res.send({message})
@@ -44,10 +44,10 @@ exports.btcQuotation = async (req,res,next) => {
             'value': data[0].ask
         }]
 
-        res.send(response)
+        res.status(200).json(response)
         
     } catch (error) {
-        res.send({message})
+        res.json({message})
     }
 }
 
