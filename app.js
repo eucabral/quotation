@@ -21,7 +21,7 @@ app.get('/',(req,res) => {
 app.use((req,res,next) => {
     const erro = new Error('Not found')
     erro.status = 404
-    next(erro)
+    return res.status(404).json({message: 'Rota não encontrada!'})
 })
 
 app.use((error,req,res,next) => {
